@@ -10,7 +10,7 @@
     <b>Listas de atividades desenvolvidas durante o curso de Análise e Desenvolvimento de Sistemas</b>
 </p>
 
-<h2 id="informacoes">💾 Informações</h2>
+<h2 id="info">💾 Informações</h2>
 
 - 👨‍💻 Autor: Gabriel Nunes
 - 📅 Data: 1º Semestre de 2025
@@ -19,7 +19,7 @@
 - 🗃️ Período: 2º / 5º
 - 📚 Atividade: psc-lista-01-2025
 
-<h2 id="technologies">👨‍💻 Tecnologias</h2>
+<h2 id="tech">👨‍💻 Tecnologias</h2>
 
 - Java
 - Portugol
@@ -29,7 +29,7 @@
 - Visual Studio Code
 - Portugol Studio
   
-<h2 id="colaboradores">🤝 Colaboradores</h2>
+<h2 id="colab">🤝 Colaboradores</h2>
 
 Agradecimentos ao meu grupo de estudos da faculdade.
 
