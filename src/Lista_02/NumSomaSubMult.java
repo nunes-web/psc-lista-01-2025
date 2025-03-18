@@ -6,7 +6,7 @@ public class NumSomaSubMult {
   public static void main(String[] args) {
     double num1, num2, soma, sub, multi;
 
-    Scanner scanner = new Scanner(System.in);
+    try(Scanner scanner = new Scanner(System.in)) {
     System.out.println("Digite o primeiro número: ");
     num1 = scanner.nextDouble();
     System.out.println("Digite o segundo número: ");
@@ -20,6 +20,6 @@ public class NumSomaSubMult {
     System.out.println("A subtração dos números é: " + sub);
     System.out.println("A multiplicação dos números é: " + multi);
 
-    scanner.close();
+    }
   }
 }
