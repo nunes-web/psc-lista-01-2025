@@ -88,8 +88,6 @@ public class SCSMs {
 
             for (int i = 0; i < notas.length; i++) {
                 qtdNotas[i] = (valorTroco / notas[i]);
-                valorTroco = (valorTroco % notas[i]);
-
             }
             System.out.println("\nSeu troco será:");
             for (int i = 0; i < notas.length; i++) {
