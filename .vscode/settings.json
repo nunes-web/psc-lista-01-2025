@@ -1,4 +1,11 @@
 {
+	"java.project.sourcePaths": [
+		"src"
+	],
+	"java.project.outputPath": "bin",
+	"java.project.referencedLibraries": [
+		"lib/**/*.jar"
+	],
 	"breadcrumbs.enabled": false,
 	"editor.fontFamily": "'Cascadia Code', 'JetBrains Mono'",
 	"editor.fontSize": 13,
