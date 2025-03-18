@@ -22,8 +22,7 @@ public class Eurotrip {
 
       totalPrice = (tripPriceDE + tripPricePT + tripPriceIT) * travelers;
 
-      NumberFormat currencyFormat = NumberFormat
-          .getCurrencyInstance(country);
+      NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(country);
       String formatTotalPrice = currencyFormat.format(totalPrice);
 
       System.out.println("O valor total da viagem para " + travelers + " viajantes é: \n" + formatTotalPrice);
