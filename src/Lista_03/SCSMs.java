@@ -9,7 +9,7 @@ public class SCSMs {
 
     public static void main(String[] args) {
         Locale country = Locale.getDefault();
-        String compra, notasFormat;
+        String compra, notasFormat, valorCompraFormat;
         int precoSalg = 5, precoDoce = 8, precoSuco = 3, precoRefri = 10;
         int qtdSalg = 0, qtdDoce = 0, qtdSuco = 0, qtdRefri = 0;
         int valorCompra, valorPago, valorTroco, pedido;
@@ -65,7 +65,7 @@ public class SCSMs {
             } while (finalCompra == false);
 
             valorCompra = (qtdSalg * precoSalg) + (qtdDoce * precoDoce) + (qtdSuco * precoSuco) + (qtdRefri * precoRefri);
-            String valorCompraFormat = currencyFormat.format(valorCompra);
+            valorCompraFormat = currencyFormat.format(valorCompra);
 
             System.out.println("\n===========================\n\n"
                     + "O valor total da sua compra é: " + valorCompraFormat);
@@ -86,17 +86,23 @@ public class SCSMs {
                 }
             } while (valorTroco < 0);
 
-            for (int i = 0; i < notas.length; i++) {
-                qtdNotas[i] = (valorTroco / notas[i]);
-            }
-            System.out.println("\nSeu troco será:");
-            for (int i = 0; i < notas.length; i++) {
-                if (qtdNotas[i] > 0) {
-                    notasFormat = currencyFormat.format(notas[i]);
-                    System.out.println(notasFormat + ": " + qtdNotas[i] + " nota(s)");
+            if (valorTroco == 0) {
+                System.out.println("Parabéns, você não precisa de troco!");
+            } else {
+
+                for (int i = 0; i < notas.length; i++) {
+                    qtdNotas[i] = (valorTroco / notas[i]);
+                    valorTroco = valorTroco % notas[i];
+                }
+                System.out.println("\nSeu troco será:");
+                for (int i = 0; i < notas.length; i++) {
+                    if (qtdNotas[i] > 0) {
+                        notasFormat = currencyFormat.format(notas[i]);
+                        System.out.println(notasFormat + ": " + qtdNotas[i] + " nota(s)");
+                    }
                 }
             }
-        }
 
+        }
     }
 }
