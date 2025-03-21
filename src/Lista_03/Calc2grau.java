@@ -3,7 +3,7 @@ package Lista_03;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Calc2grau {
+public class Calc2Grau {
   public static void main(String[] args) {
     // Variaveis
     int switchVer;
