@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Calc2Grau {
   public static void main(String[] args) {
     // Variaveis
-    int switchVer;
     Double a, b, c, delta, raiz1, raiz2;
     int verificar;
 
@@ -55,15 +54,13 @@ public class Calc2Grau {
         raiz2 = ((-b - (Math.sqrt(delta))) / (2 * a));
         System.out.println("Esta equação possui duas raizes iguais." +
             "\nDiscriminante Delta é igual a: " + delta);
-        System.out.printf("A primeira raiz é: %.2f", raiz1);
-        System.out.printf("\nA segunda raiz é: %.2f", raiz2);
+        System.out.printf("A primeira raiz é: %.2f\nA segunda raiz é: %.2f\n", raiz1, raiz2);
       } else {
         raiz1 = ((-b + (Math.sqrt(delta))) / (2 * a));
         raiz2 = ((-b - (Math.sqrt(delta))) / (2 * a));
         System.out.println("Esta equação possui duas raízes diferentes." +
             "\nDiscriminante Delta é igual a: " + delta);
-        System.out.printf("A primeira raiz é: %.2f", raiz1);
-        System.out.printf("\nA segunda raiz é: %.2f", raiz2);
+        System.out.printf("A primeira raiz é: %.2f\nA segunda raiz é: %.2f\n", raiz1, raiz2);
       }
     }
   }
