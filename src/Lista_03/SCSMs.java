@@ -2,6 +2,7 @@ package Lista_03;
 //Spontaneous Craving Satisfaction Machine
 
 import java.text.NumberFormat;
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -14,7 +15,7 @@ public class SCSMs {
         int qtdSalg = 0, qtdDoce = 0, qtdSuco = 0, qtdRefri = 0;
         int valorCompra, valorPago, valorTroco, pedido;
         boolean finalCompra;
-        int[] notas = {50, 20, 10, 5, 2, 1};
+        int[] notas = { 50, 20, 10, 5, 2, 1 };
         int[] qtdNotas = new int[notas.length];
 
         NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(country);
@@ -35,27 +36,79 @@ public class SCSMs {
                     + "=====================================\n");
 
             do {
-                System.out.println("Digite qual produto que deseja comprar [1 - 4]: ");
-                pedido = scanner.nextInt();
+                while (true) {
+                    try {
+                        System.out.println("Digite qual produto que deseja comprar [1 - 4]: ");
+                        pedido = scanner.nextInt();
+                        if (pedido < 1 || pedido > 4) {
+                            System.out.println(
+                                    "Opção inválida...");
+                            continue;
+                        }
+                        break;
+                    } catch (InputMismatchException notInt) {
+                        System.out.println(
+                                "Entrada inválida... ");
+                        scanner.next();
+                    }
+
+                }
+
                 switch (pedido) {
                     case 1:
-                        System.out.println("Digite a quantidade de salgados que deseja comprar: ");
-                        qtdSalg = scanner.nextInt();
+                        while (true) {
+                            try {
+                                System.out.println("Digite a quantidade de salgados que deseja comprar: ");
+                                qtdSalg = scanner.nextInt();
+                                break;
+                            } catch (InputMismatchException notInt) {
+                                System.out.println(
+                                        "Entrada inválida... ");
+                                scanner.next();
+                            }
+                        }
                         break;
                     case 2:
-                        System.out.println("Digite a quantidade de doces que deseja comprar: ");
-                        qtdDoce = scanner.nextInt();
+                        while (true) {
+                            try {
+                                System.out.println("Digite a quantidade de doces que deseja comprar: ");
+                                qtdDoce = scanner.nextInt();
+                                break;
+                            } catch (InputMismatchException notInt) {
+                                System.out.println(
+                                        "Entrada inválida... ");
+                                scanner.next();
+                            }
+                        }
                         break;
                     case 3:
-                        System.out.println("Digite a quantidade de sucos que deseja comprar: ");
-                        qtdSuco = scanner.nextInt();
+                        while (true) {
+                            try {
+                                System.out.println("Digite a quantidade de sucos que deseja comprar: ");
+                                qtdSuco = scanner.nextInt();
+                                break;
+                            } catch (InputMismatchException notInt) {
+                                System.out.println(
+                                        "Entrada inválida... ");
+                                scanner.next();
+                            }
+                        }
                         break;
                     case 4:
-                        System.out.println("Digite a quantidade de refrigerantes que deseja comprar: ");
-                        qtdRefri = scanner.nextInt();
+                        while (true) {
+                            try {
+                                System.out.println("Digite a quantidade de refrigerantes que deseja comprar: ");
+                                qtdRefri = scanner.nextInt();
+                                break;
+                            } catch (InputMismatchException notInt) {
+                                System.out.println(
+                                        "Entrada inválida... ");
+                                scanner.next();
+                            }
+                        }
                         break;
                     default:
-                        System.out.println("Opção inválida. Tente novamente.");
+                        System.out.println("Opção inválida...");
                 }
 
                 System.out.println("Deseja comprar mais alguma coisa? [S / N]");
@@ -64,7 +117,8 @@ public class SCSMs {
 
             } while (finalCompra == false);
 
-            valorCompra = (qtdSalg * precoSalg) + (qtdDoce * precoDoce) + (qtdSuco * precoSuco) + (qtdRefri * precoRefri);
+            valorCompra = (qtdSalg * precoSalg) + (qtdDoce * precoDoce) + (qtdSuco * precoSuco)
+                    + (qtdRefri * precoRefri);
             valorCompraFormat = currencyFormat.format(valorCompra);
 
             System.out.println("\n=====================================\n\n"
@@ -77,8 +131,17 @@ public class SCSMs {
             }
 
             do {
-                System.out.println("\nDigite o valor que deseja pagar: ");
-                valorPago = scanner.nextInt();
+                while (true) {
+                    try {
+                        System.out.println("\nDigite o valor que deseja pagar: ");
+                        valorPago = scanner.nextInt();
+                        break;
+                    } catch (InputMismatchException notInt) {
+                        System.out.println(
+                                "Entrada inválida... ");
+                        scanner.next();
+                    }
+                }
 
                 valorTroco = valorPago - valorCompra;
                 if (valorTroco < 0) {
@@ -87,14 +150,16 @@ public class SCSMs {
             } while (valorTroco < 0);
 
             if (valorTroco == 0) {
-                System.out.println("\nParabéns, você não precisa de troco!");
+                System.out.println("\n=====================================\n\n" +
+                        "Parabéns, você não precisa de troco!");
             } else {
 
                 for (int i = 0; i < notas.length; i++) {
                     qtdNotas[i] = (valorTroco / notas[i]);
                     valorTroco = valorTroco % notas[i];
                 }
-                System.out.println("\nSeu troco será:");
+                System.out.println("\n=====================================\n\n" +
+                        "Seu troco será: ");
                 for (int i = 0; i < notas.length; i++) {
                     if (qtdNotas[i] > 0) {
                         notasFormat = currencyFormat.format(notas[i]);
@@ -102,8 +167,7 @@ public class SCSMs {
                     }
                 }
             }
-            System.out.println("\n=====================================\n\n"
-                    + "Compra finalizada, volte sempre!\n"
+            System.out.println("Compra finalizada, volte sempre!\n"
                     + "\n=====================================\n");
 
         }
