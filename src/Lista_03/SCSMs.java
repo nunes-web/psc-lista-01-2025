@@ -26,13 +26,13 @@ public class SCSMs {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("\nBem-vindo à Máquina de Satisfação de Desejos Espontâneos! S.C.S.M.\n"
                     + "Aqui você pode comprar salgados, doces, sucos e refrigerantes.\n\n"
-                    + "===========================\n\n"
+                    + "=====================================\n\n"
                     + "Aqui estão os preços dos produtos:\n"
                     + "[1] Salgado: " + precoSalgFormat + "\n"
                     + "[2] Doce: " + precoDoceFormat + "\n"
                     + "[3] Suco: " + precoSucoFormat + "\n"
                     + "[4] Refrigerante: " + precoRefriFormat + "\n\n"
-                    + "===========================\n");
+                    + "=====================================\n");
 
             do {
                 System.out.println("Digite qual produto que deseja comprar [1 - 4]: ");
@@ -67,7 +67,7 @@ public class SCSMs {
             valorCompra = (qtdSalg * precoSalg) + (qtdDoce * precoDoce) + (qtdSuco * precoSuco) + (qtdRefri * precoRefri);
             valorCompraFormat = currencyFormat.format(valorCompra);
 
-            System.out.println("\n===========================\n\n"
+            System.out.println("\n=====================================\n\n"
                     + "O valor total da sua compra é: " + valorCompraFormat);
 
             System.out.println("Esta máquina aceita apenas as notas de: \n");
@@ -87,7 +87,7 @@ public class SCSMs {
             } while (valorTroco < 0);
 
             if (valorTroco == 0) {
-                System.out.println("Parabéns, você não precisa de troco!");
+                System.out.println("\nParabéns, você não precisa de troco!");
             } else {
 
                 for (int i = 0; i < notas.length; i++) {
@@ -102,6 +102,9 @@ public class SCSMs {
                     }
                 }
             }
+            System.out.println("\n=====================================\n\n"
+                    + "Compra finalizada, volte sempre!\n"
+                    + "\n=====================================\n");
 
         }
     }
