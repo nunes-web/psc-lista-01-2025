@@ -51,6 +51,9 @@ public class Divertidamente {
         }
 
         alegria = alegria * novasAmizadesCidade;
+        if (alegria == 0) {
+          tristeza += 30;
+        }
       }
 
       // Segunda pergunta
