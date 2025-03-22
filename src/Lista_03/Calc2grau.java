@@ -42,6 +42,7 @@ public class Calc2Grau {
 
       // Calculo Discriminate Delta
       delta = ((b * b) - 4 * a * c);
+
       // Verificacao da equacao
       if (a == 0 && b != 0) {
         System.err.println("Esta é uma equação de primeiro grau." +

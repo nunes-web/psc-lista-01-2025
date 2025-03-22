@@ -74,5 +74,6 @@
 	"codesnap.transparentBackground": true,
 	"codesnap.showWindowTitle": true,
 	"codesnap.containerPadding": "0.1em",
-	"window.zoomLevel": 0
+	"window.zoomLevel": 0,
+	"java.debug.settings.onBuildFailureProceed": true
 }
