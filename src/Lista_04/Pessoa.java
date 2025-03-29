@@ -146,6 +146,5 @@ public class Pessoa {
         + "\nSexo: " + sexo
         + "\nEstado Civil: " + estadoCivil
         + "\n\n=========================\n");
-
   }
 }
