@@ -8,7 +8,7 @@ public class ZeroDez {
     // Variáveis
     int nota;
 
-    // Entrada do usuário, com veirificação de valores digitados
+    // Entrada do usuário, com verificação de valores digitados
     try (Scanner scanner = new Scanner(System.in)) {
       do {
         while (true)
