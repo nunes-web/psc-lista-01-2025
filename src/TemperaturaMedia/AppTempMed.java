@@ -1,4 +1,4 @@
-package Lista_05.TemperaturaMedia;
+package TemperaturaMedia;
 
 import java.util.ArrayList;
 
