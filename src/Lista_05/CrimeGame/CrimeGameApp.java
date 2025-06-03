@@ -14,15 +14,23 @@ public class CrimeGameApp {
         "Já trabalhou com a vítima?"
     };
 
+    javax.swing.JFrame janela = new javax.swing.JFrame();
+
     // Introdução ao Jogo
     Jogador jogador = new Jogador();
 
-    javax.swing.JFrame janela = new javax.swing.JFrame();
+    while (true) { 
     String nome = javax.swing.JOptionPane.showInputDialog(janela, "Digite o seu nome jogador(a): ", "CrimeGame!",
         javax.swing.JOptionPane.QUESTION_MESSAGE);
-
+      
     jogador.setNome(nome);
-
+     if (jogador.getNome() == null || nome.trim().isEmpty()){  
+     javax.swing.JOptionPane.showMessageDialog(janela,
+        "Erro crítico, você não pode jogar sem um nome!" + "\nO jogo será encerrado.",
+        "CrimeGame!",
+        javax.swing.JOptionPane.WARNING_MESSAGE);
+        break;}
+    
     javax.swing.JOptionPane.showMessageDialog(janela,
         "Bem-vindo, " + jogador.getNome() + "!" + "\nResponda as perguntas, seja sincero, e tudo acabará bem...",
         "CrimeGame!",
@@ -103,4 +111,5 @@ public class CrimeGameApp {
         javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
   }
+}
 }
