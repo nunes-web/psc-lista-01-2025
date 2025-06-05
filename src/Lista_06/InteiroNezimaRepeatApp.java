@@ -6,12 +6,15 @@ public class InteiroNezimaRepeatApp {
   public static void main(String[] args) {
     int numero;
     while (true) {
-      String entrada = JOptionPane.showInputDialog(null, "Digite um número inteiro:", "Entrada", JOptionPane.QUESTION_MESSAGE);
-      if (entrada == null) return;
+      String entrada = JOptionPane.showInputDialog(null, "Digite um número inteiro:", "Entrada",
+          JOptionPane.QUESTION_MESSAGE);
+      if (entrada == null)
+        return;
       try {
         numero = Integer.parseInt(entrada.trim());
         if (numero < 0) {
-          JOptionPane.showMessageDialog(null, "Não são permitidos números negativos!", "Erro", JOptionPane.ERROR_MESSAGE);
+          JOptionPane.showMessageDialog(null, "Não são permitidos números negativos!", "Erro",
+              JOptionPane.ERROR_MESSAGE);
         } else {
           break;
         }
